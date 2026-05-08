@@ -135,14 +135,14 @@ footer{color:#666;font-size:0.78rem;padding:2rem;text-align:center;border-top:1p
 
     <div class="project">
       <div class="project-top">
-        <span class="project-name">Rental Equipment Site</span>
+        <span class="project-name">Tourist Agency Trip Manager</span>
         <div class="project-links-row">
-          <a href="https://github.com/khush10barot" target="_blank">github ↗</a>
+          <a href="https://github.com/khush10barot/tourist-agency-app" target="_blank">github ↗</a>
         </div>
       </div>
-      <p class="project-desc">Full-stack web application for equipment rental management with booking system, inventory tracking, and user authentication.</p>
+      <p class="project-desc">Flutter mobile app for managing travel bookings with full CRUD operations and persistent local storage. Features real-time total price calculation across all saved trips, form validation, and edit/delete functionality.</p>
       <div class="project-tags">
-        <span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span>
+        <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">SQLite</span><span class="tag">CRUD</span>
       </div>
     </div>
 
@@ -213,7 +213,6 @@ function draw(){
   });
 
   planets.forEach(p=>{
-  
     const g=ctx.createRadialGradient(p.cx,p.cy,p.r*0.3,p.cx,p.cy,p.r*2.5);
     g.addColorStop(0,p.glow+'55');
     g.addColorStop(1,'transparent');
@@ -235,7 +234,6 @@ function draw(){
     ctx.fillStyle=p.color;
     ctx.fill();
 
-    
     p.moons.forEach(m=>{
       m.angle+=m.speed;
       const mx=p.cx+Math.cos(m.angle)*m.dist;
