@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Khush Barot</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#0f0f0f;--text:#d4d4d4;--dim:#666;--accent:#c8ff00;--border:#222;}
+body{background:var(--bg);color:var(--text);font-family:'Courier New',Courier,monospace;font-size:14px;line-height:1.7;min-height:100vh;}
+a{color:var(--text);text-decoration:underline;text-underline-offset:3px;}
+a:hover{color:var(--accent);}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:var(--bg);border-bottom:1px solid var(--border);z-index:100;}
+.nav-name{color:var(--accent);font-size:0.9rem;letter-spacing:0.05em;}
+.nav-links{display:flex;gap:2rem;}
+.nav-links a{text-decoration:none;color:var(--dim);font-size:0.85rem;transition:color 0.15s;}
+.nav-links a:hover{color:var(--text);}
+
+/* LAYOUT */
+.page{max-width:780px;margin:0 auto;padding:6rem 2rem 4rem;}
+
+/* HERO */
+.hero{min-height:90vh;display:flex;flex-direction:column;justify-content:center;}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:normal;color:var(--text);margin-bottom:0.25rem;}
+.cursor{display:inline-block;width:2px;height:1.1em;background:var(--accent);vertical-align:text-bottom;margin-left:4px;animation:blink 1s step-end infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+.hero-sub{color:var(--dim);font-size:0.9rem;margin-bottom:2.5rem;margin-top:0.5rem;}
+.hero-links{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:3rem;}
+.hero-links a{color:var(--dim);font-size:0.85rem;text-decoration:none;border:1px solid var(--border);padding:0.35rem 0.9rem;border-radius:2px;transition:all 0.15s;}
+.hero-links a:hover{color:var(--accent);border-color:var(--accent);}
+.status{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:var(--dim);}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+
+/* SECTIONS */
+.section{margin-bottom:5rem;}
+.section-title{color:var(--dim);font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:2rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border);}
+
+/* ABOUT */
+.about-text{color:var(--dim);line-height:1.9;max-width:620px;}
+.about-text p{margin-bottom:1rem;}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse;font-size:0.85rem;}
+th{text-align:left;color:var(--dim);font-weight:normal;padding:0.4rem 1rem 0.4rem 0;border-bottom:1px solid var(--border);font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;}
+td{padding:0.55rem 1rem 0.55rem 0;color:var(--text);border-bottom:1px solid var(--border);vertical-align:top;}
+td:first-child{color:var(--dim);white-space:nowrap;width:180px;}
+tr:last-child td{border-bottom:none;}
+.tag{display:inline-block;background:#1a1a1a;border:1px solid var(--border);border-radius:2px;padding:0.1rem 0.4rem;font-size:0.75rem;color:var(--dim);margin:0.1rem 0.2rem 0.1rem 0;}
+
+/* PROJECTS */
+.project{border:1px solid var(--border);border-radius:3px;padding:1.5rem;margin-bottom:1rem;transition:border-color 0.15s;}
+.project:hover{border-color:#444;}
+.project-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.5rem;}
+.project-name{color:var(--text);font-size:0.95rem;}
+.project-links-row{display:flex;gap:0.75rem;}
+.project-links-row a{color:var(--dim);font-size:0.8rem;text-decoration:none;}
+.project-links-row a:hover{color:var(--accent);}
+.project-desc{color:var(--dim);font-size:0.85rem;line-height:1.7;margin-bottom:1rem;}
+.project-tags{display:flex;flex-wrap:wrap;gap:0.3rem;}
+
+/* CONTACT */
+.contact-list{list-style:none;display:flex;flex-direction:column;gap:0.75rem;}
+.contact-list li{font-size:0.9rem;}
+.contact-list span{color:var(--dim);display:inline-block;width:80px;}
+
+footer{color:var(--dim);font-size:0.75rem;padding:2rem;text-align:center;border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">khush barot</span>
+  <div class="nav-links">
+    <a href="#about">about</a>
+    <a href="#skills">skills</a>
+    <a href="#projects">projects</a>
+    <a href="#contact">contact</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Khush Barot<span class="cursor"></span></h1>
+    <p class="hero-sub">Computer Programming Graduate &nbsp;·&nbsp; Ontario, Canada</p>
+    <div class="hero-links">
+      <a href="mailto:khushabarot1005@gmail.com">email</a>
+      <a href="https://github.com/khush10barot" target="_blank">github</a>
+      <a href="https://linkedin.com/in/khush-barot-612b94240" target="_blank">linkedin</a>
+      <a href="#" target="_blank">résumé</a>
+    </div>
+    <span class="status"><span class="dot"></span> open to work — dev &amp; IT support roles</span>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section" id="about">
+    <p class="section-title">About</p>
+    <div class="about-text">
+      <p>I'm a Computer Programming graduate from Conestoga College with a focus on full-stack web development and mobile applications. I enjoy building things that solve real problems — clean, functional, and maintainable.</p>
+      <p>My stack spans JavaScript/TypeScript, React, Node.js, Python, and Flutter. I'm comfortable across the full stack and always picking up new tools. Currently seeking entry-level roles in software development or IT support in Ontario.</p>
+      <p>I'm in the process of obtaining my Post-Graduation Work Permit and will be fully authorized to work in Canada without employer sponsorship upon approval.</p>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section" id="skills">
+    <p class="section-title">Skills</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Area</th>
+          <th>Technologies</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Frontend</td>
+          <td>
+            <span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">HTML/CSS</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Backend</td>
+          <td>
+            <span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">C#</span><span class="tag">.NET</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Mobile</td>
+          <td>
+            <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Android</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Databases</td>
+          <td>
+            <span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">SQLite</span><span class="tag">Redis</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Tools</td>
+          <td>
+            <span class="tag">Git</span><span class="tag">REST APIs</span><span class="tag">VS Code</span><span class="tag">GitHub</span>
+          </td>
+        </tr>
+        <tr>
+          <td>IT Support</td>
+          <td>
+            <span class="tag">Windows 10/11</span><span class="tag">Active Directory</span><span class="tag">Office 365</span><span class="tag">Troubleshooting</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section" id="projects">
+    <p class="section-title">Projects</p>
+
+    <div class="project">
+      <div class="project-top">
+        <span class="project-name">MocTale</span>
+        <div class="project-links-row">
+          <a href="https://github.com/khush10barot/moctale-mobile-app" target="_blank">github ↗</a>
+        </div>
+      </div>
+      <p class="project-desc">Flutter mobile app to search 1M+ movies via TMDB REST API, manage a personal watchlist with persistent SQLite storage, rate and review films, and locate nearby cinemas via Google Maps.</p>
+      <div class="project-tags">
+        <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">SQLite</span><span class="tag">TMDB API</span><span class="tag">Google Maps SDK</span>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-top">
+        <span class="project-name">Rental Equipment Site</span>
+        <div class="project-links-row">
+          <a href="https://github.com/khush10barot" target="_blank">github ↗</a>
+        </div>
+      </div>
+      <p class="project-desc">Full-stack web application for equipment rental management with booking system, inventory tracking, and user authentication.</p>
+      <div class="project-tags">
+        <span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section" id="contact">
+    <p class="section-title">Contact</p>
+    <ul class="contact-list">
+      <li><span>email</span> <a href="mailto:khushabarot1005@gmail.com">khushabarot1005@gmail.com</a></li>
+      <li><span>github</span> <a href="https://github.com/khush10barot" target="_blank">github.com/khush10barot</a></li>
+      <li><span>linkedin</span> <a href="https://linkedin.com/in/khush-barot-612b94240" target="_blank">linkedin.com/in/khush-barot-612b94240</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>khush barot · ontario, canada · 2026</footer>
+
+</body>
+</html>
