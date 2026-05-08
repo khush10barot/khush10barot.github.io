@@ -2,74 +2,71 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
+<link rel="icon" type="image/png" href="favicon.png"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Khush Barot</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{--bg:#0f0f0f;--text:#d4d4d4;--dim:#666;--accent:#c8ff00;--border:#222;}
-body{background:var(--bg);color:var(--text);font-family:'Courier New',Courier,monospace;font-size:14px;line-height:1.7;min-height:100vh;}
+:root{--bg:#050510;--text:#e8e8e8;--dim:#999;--accent:#c8ff00;--border:#1e1e2e;}
+body{background:var(--bg);color:var(--text);font-family:'Courier New',Courier,monospace;font-size:14px;line-height:1.7;min-height:100vh;overflow-x:hidden;}
 a{color:var(--text);text-decoration:underline;text-underline-offset:3px;}
 a:hover{color:var(--accent);}
 
-/* NAV */
-nav{position:fixed;top:0;width:100%;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:var(--bg);border-bottom:1px solid var(--border);z-index:100;}
-.nav-name{color:var(--accent);font-size:0.9rem;letter-spacing:0.05em;}
+#space{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+
+nav{position:fixed;top:0;width:100%;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(5,5,16,0.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:100;}
+.nav-name{color:var(--accent);font-size:0.95rem;font-weight:700;letter-spacing:0.05em;}
 .nav-links{display:flex;gap:2rem;}
-.nav-links a{text-decoration:none;color:var(--dim);font-size:0.85rem;transition:color 0.15s;}
-.nav-links a:hover{color:var(--text);}
+.nav-links a{text-decoration:none;color:#bbb;font-size:0.88rem;font-weight:600;transition:color 0.15s;}
+.nav-links a:hover{color:var(--accent);}
 
-/* LAYOUT */
-.page{max-width:780px;margin:0 auto;padding:6rem 2rem 4rem;}
+.page{max-width:780px;margin:0 auto;padding:6rem 2rem 4rem;position:relative;z-index:1;}
 
-/* HERO */
 .hero{min-height:90vh;display:flex;flex-direction:column;justify-content:center;}
-.hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:normal;color:var(--text);margin-bottom:0.25rem;}
-.cursor{display:inline-block;width:2px;height:1.1em;background:var(--accent);vertical-align:text-bottom;margin-left:4px;animation:blink 1s step-end infinite;}
+.hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:800;color:#fff;margin-bottom:0.25rem;letter-spacing:-0.02em;}
+.cursor{display:inline-block;width:3px;height:1.1em;background:var(--accent);vertical-align:text-bottom;margin-left:4px;animation:blink 1s step-end infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
-.hero-sub{color:var(--dim);font-size:0.9rem;margin-bottom:2.5rem;margin-top:0.5rem;}
+.hero-sub{color:#bbb;font-size:0.95rem;font-weight:600;margin-bottom:2.5rem;margin-top:0.5rem;}
 .hero-links{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:3rem;}
-.hero-links a{color:var(--dim);font-size:0.85rem;text-decoration:none;border:1px solid var(--border);padding:0.35rem 0.9rem;border-radius:2px;transition:all 0.15s;}
+.hero-links a{color:#ccc;font-size:0.88rem;font-weight:600;text-decoration:none;border:1px solid var(--border);padding:0.4rem 1rem;border-radius:2px;transition:all 0.15s;}
 .hero-links a:hover{color:var(--accent);border-color:var(--accent);}
-.status{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:var(--dim);}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;animation:pulse 2s ease-in-out infinite;}
+.status{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.82rem;color:#bbb;font-weight:600;}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;animation:pulse 2s ease-in-out infinite;}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
 
-/* SECTIONS */
 .section{margin-bottom:5rem;}
-.section-title{color:var(--dim);font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:2rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border);}
+.section-title{color:#ccc;font-size:0.78rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:2rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border);}
 
-/* ABOUT */
-.about-text{color:var(--dim);line-height:1.9;max-width:620px;}
+.about-text{color:#bbb;line-height:1.9;max-width:620px;font-size:0.92rem;font-weight:500;}
 .about-text p{margin-bottom:1rem;}
 
-/* TABLE */
-table{width:100%;border-collapse:collapse;font-size:0.85rem;}
-th{text-align:left;color:var(--dim);font-weight:normal;padding:0.4rem 1rem 0.4rem 0;border-bottom:1px solid var(--border);font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;}
-td{padding:0.55rem 1rem 0.55rem 0;color:var(--text);border-bottom:1px solid var(--border);vertical-align:top;}
-td:first-child{color:var(--dim);white-space:nowrap;width:180px;}
+table{width:100%;border-collapse:collapse;font-size:0.88rem;}
+th{text-align:left;color:#aaa;font-weight:700;padding:0.4rem 1rem 0.4rem 0;border-bottom:1px solid var(--border);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;}
+td{padding:0.6rem 1rem 0.6rem 0;color:#ddd;border-bottom:1px solid var(--border);vertical-align:top;font-weight:500;}
+td:first-child{color:#aaa;white-space:nowrap;width:180px;font-weight:600;}
 tr:last-child td{border-bottom:none;}
-.tag{display:inline-block;background:#1a1a1a;border:1px solid var(--border);border-radius:2px;padding:0.1rem 0.4rem;font-size:0.75rem;color:var(--dim);margin:0.1rem 0.2rem 0.1rem 0;}
+.tag{display:inline-block;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:2px;padding:0.15rem 0.5rem;font-size:0.78rem;color:#bbb;margin:0.1rem 0.2rem 0.1rem 0;font-weight:600;}
 
-/* PROJECTS */
-.project{border:1px solid var(--border);border-radius:3px;padding:1.5rem;margin-bottom:1rem;transition:border-color 0.15s;}
+.project{border:1px solid var(--border);border-radius:4px;padding:1.5rem;margin-bottom:1rem;transition:border-color 0.15s;background:rgba(255,255,255,0.02);}
 .project:hover{border-color:#444;}
 .project-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.5rem;}
-.project-name{color:var(--text);font-size:0.95rem;}
+.project-name{color:#fff;font-size:1rem;font-weight:700;}
 .project-links-row{display:flex;gap:0.75rem;}
-.project-links-row a{color:var(--dim);font-size:0.8rem;text-decoration:none;}
+.project-links-row a{color:#999;font-size:0.82rem;font-weight:600;text-decoration:none;}
 .project-links-row a:hover{color:var(--accent);}
-.project-desc{color:var(--dim);font-size:0.85rem;line-height:1.7;margin-bottom:1rem;}
+.project-desc{color:#aaa;font-size:0.88rem;font-weight:500;line-height:1.7;margin-bottom:1rem;}
 .project-tags{display:flex;flex-wrap:wrap;gap:0.3rem;}
 
-/* CONTACT */
 .contact-list{list-style:none;display:flex;flex-direction:column;gap:0.75rem;}
-.contact-list li{font-size:0.9rem;}
-.contact-list span{color:var(--dim);display:inline-block;width:80px;}
+.contact-list li{font-size:0.92rem;font-weight:500;}
+.contact-list span{color:#888;font-weight:700;display:inline-block;width:80px;}
 
-footer{color:var(--dim);font-size:0.75rem;padding:2rem;text-align:center;border-top:1px solid var(--border);}
+footer{color:#666;font-size:0.78rem;padding:2rem;text-align:center;border-top:1px solid var(--border);position:relative;z-index:1;font-weight:600;}
 </style>
 </head>
 <body>
+
+<canvas id="space"></canvas>
 
 <nav>
   <span class="nav-name">khush barot</span>
@@ -83,7 +80,6 @@ footer{color:var(--dim);font-size:0.75rem;padding:2rem;text-align:center;border-
 
 <div class="page">
 
-  <!-- HERO -->
   <div class="hero">
     <h1>Khush Barot<span class="cursor"></span></h1>
     <p class="hero-sub">Computer Programming Graduate &nbsp;·&nbsp; Ontario, Canada</p>
@@ -96,7 +92,6 @@ footer{color:var(--dim);font-size:0.75rem;padding:2rem;text-align:center;border-
     <span class="status"><span class="dot"></span> open to work — dev &amp; IT support roles</span>
   </div>
 
-  <!-- ABOUT -->
   <div class="section" id="about">
     <p class="section-title">About</p>
     <div class="about-text">
@@ -106,58 +101,23 @@ footer{color:var(--dim);font-size:0.75rem;padding:2rem;text-align:center;border-
     </div>
   </div>
 
-  <!-- SKILLS -->
   <div class="section" id="skills">
     <p class="section-title">Skills</p>
     <table>
       <thead>
-        <tr>
-          <th>Area</th>
-          <th>Technologies</th>
-        </tr>
+        <tr><th>Area</th><th>Technologies</th></tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Frontend</td>
-          <td>
-            <span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">HTML/CSS</span>
-          </td>
-        </tr>
-        <tr>
-          <td>Backend</td>
-          <td>
-            <span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">C#</span><span class="tag">.NET</span>
-          </td>
-        </tr>
-        <tr>
-          <td>Mobile</td>
-          <td>
-            <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Android</span>
-          </td>
-        </tr>
-        <tr>
-          <td>Databases</td>
-          <td>
-            <span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">SQLite</span><span class="tag">Redis</span>
-          </td>
-        </tr>
-        <tr>
-          <td>Tools</td>
-          <td>
-            <span class="tag">Git</span><span class="tag">REST APIs</span><span class="tag">VS Code</span><span class="tag">GitHub</span>
-          </td>
-        </tr>
-        <tr>
-          <td>IT Support</td>
-          <td>
-            <span class="tag">Windows 10/11</span><span class="tag">Active Directory</span><span class="tag">Office 365</span><span class="tag">Troubleshooting</span>
-          </td>
-        </tr>
+        <tr><td>Frontend</td><td><span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">HTML/CSS</span></td></tr>
+        <tr><td>Backend</td><td><span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">C#</span><span class="tag">.NET</span></td></tr>
+        <tr><td>Mobile</td><td><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Android</span></td></tr>
+        <tr><td>Databases</td><td><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">SQLite</span><span class="tag">Redis</span></td></tr>
+        <tr><td>Tools</td><td><span class="tag">Git</span><span class="tag">REST APIs</span><span class="tag">VS Code</span><span class="tag">GitHub</span></td></tr>
+        <tr><td>IT Support</td><td><span class="tag">Windows 10/11</span><span class="tag">Active Directory</span><span class="tag">Office 365</span><span class="tag">Troubleshooting</span></td></tr>
       </tbody>
     </table>
   </div>
 
-  <!-- PROJECTS -->
   <div class="section" id="projects">
     <p class="section-title">Projects</p>
 
@@ -189,7 +149,6 @@ footer{color:var(--dim);font-size:0.75rem;padding:2rem;text-align:center;border-
 
   </div>
 
-  <!-- CONTACT -->
   <div class="section" id="contact">
     <p class="section-title">Contact</p>
     <ul class="contact-list">
@@ -203,5 +162,119 @@ footer{color:var(--dim);font-size:0.75rem;padding:2rem;text-align:center;border-
 
 <footer>khush barot · ontario, canada · 2026</footer>
 
+<script>
+const canvas = document.getElementById('space');
+const ctx = canvas.getContext('2d');
+
+let W, H, stars=[], planets=[];
+
+function resize(){
+  W=canvas.width=window.innerWidth;
+  H=canvas.height=window.innerHeight;
+}
+
+function initStars(){
+  stars=[];
+  for(let i=0;i<220;i++){
+    stars.push({
+      x:Math.random()*W, y:Math.random()*H,
+      r:Math.random()*1.4+0.2,
+      o:Math.random()*0.7+0.3,
+      twinkle:Math.random()*0.02+0.005,
+      phase:Math.random()*Math.PI*2
+    });
+  }
+}
+
+function initPlanets(){
+  planets=[
+    {cx:W*0.82, cy:H*0.22, r:38, color:'#fff7d6', glow:'#ffe066', moons:[]},
+    {cx:W*0.15, cy:H*0.6, r:22, color:'#4a7fa5', glow:'#4a7fa5', ring:true, moons:[
+      {dist:38, angle:0.5, r:4, color:'#8ab4cc', speed:0.008}
+    ]},
+    {cx:W*0.7, cy:H*0.75, r:11, color:'#a05040', glow:'#a05040', moons:[
+      {dist:22, angle:1.2, r:3, color:'#c8806a', speed:0.015}
+    ]},
+    {cx:W*0.35, cy:H*0.18, r:8, color:'#3a8a7a', glow:'#3a8a7a', moons:[]},
+  ];
+}
+
+let t=0;
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  t+=0.012;
+
+  stars.forEach(s=>{
+    s.phase+=s.twinkle;
+    const op=s.o*(0.6+0.4*Math.sin(s.phase));
+    ctx.beginPath();
+    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(255,255,255,${op})`;
+    ctx.fill();
+  });
+
+  planets.forEach(p=>{
+  
+    const g=ctx.createRadialGradient(p.cx,p.cy,p.r*0.3,p.cx,p.cy,p.r*2.5);
+    g.addColorStop(0,p.glow+'55');
+    g.addColorStop(1,'transparent');
+    ctx.beginPath();
+    ctx.arc(p.cx,p.cy,p.r*2.5,0,Math.PI*2);
+    ctx.fillStyle=g;
+    ctx.fill();
+
+    if(p.ring){
+      ctx.beginPath();
+      ctx.ellipse(p.cx,p.cy,p.r*2.2,p.r*0.45,0.3,0,Math.PI*2);
+      ctx.strokeStyle='rgba(150,200,255,0.25)';
+      ctx.lineWidth=3;
+      ctx.stroke();
+    }
+
+    ctx.beginPath();
+    ctx.arc(p.cx,p.cy,p.r,0,Math.PI*2);
+    ctx.fillStyle=p.color;
+    ctx.fill();
+
+    
+    p.moons.forEach(m=>{
+      m.angle+=m.speed;
+      const mx=p.cx+Math.cos(m.angle)*m.dist;
+      const my=p.cy+Math.sin(m.angle)*m.dist*0.45;
+      ctx.beginPath();
+      ctx.arc(mx,my,m.r,0,Math.PI*2);
+      ctx.fillStyle=m.color;
+      ctx.fill();
+    });
+  });
+
+  if(Math.sin(t*0.3)>0.97){
+    const sx=(t*120)%W;
+    const sy=(t*40)%H*0.5;
+    ctx.beginPath();
+    ctx.moveTo(sx,sy);
+    ctx.lineTo(sx-60,sy+20);
+    ctx.strokeStyle='rgba(255,255,255,0.6)';
+    ctx.lineWidth=1.5;
+    ctx.stroke();
+  }
+
+  requestAnimationFrame(draw);
+}
+
+window.addEventListener('resize',()=>{resize();initStars();initPlanets();});
+resize();
+initStars();
+initPlanets();
+draw();
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t) t.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
 </body>
 </html>
